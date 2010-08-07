@@ -9,6 +9,8 @@ package
 		
 		private var firstCursor:FlxSprite;
 		private var secondCursor:FlxSprite;
+		private var thirdCursor:FlxSprite;
+		private var fourthCursor:FlxSprite;
 		private var cursors:FlxGroup;
 		private var coins:FlxGroup;
 		
@@ -30,9 +32,18 @@ package
 			secondCursor = new FlxSprite(FlxG.mouse.x, FlxG.mouse.y);
 			secondCursor.loadGraphic(ImgCursor);
 			cursors.add(secondCursor);
+
+			thirdCursor = new FlxSprite(FlxG.mouse.x, FlxG.mouse.y);
+			thirdCursor.loadGraphic(ImgCursor);
+			cursors.add(thirdCursor);
 			
+			fourthCursor = new FlxSprite(FlxG.mouse.x, FlxG.mouse.y);
+			fourthCursor.loadGraphic(ImgCursor);
+			cursors.add(fourthCursor);
+
 			coins = new FlxGroup();
 			add(coins);
+
 			var coin:FlxSprite = new FlxSprite(60, 200);
 			coin.loadGraphic(ImgCoin);
 			coins.add(coin);
@@ -47,12 +58,18 @@ package
 			firstCursor.y = FlxG.mouse.y;
 			if(FlxG.keys.X)
 			{
-				//var CENTER:FlxPoint = new FlxPoint(FlxG.width, FlxG.height);
 				secondCursor.x = (FlxG.mouse.x * -1) + refPoint.x * 2;
 				secondCursor.y = (FlxG.mouse.y * -1) + refPoint.y * 2;
-				//var dst:FlxPoint = new FlxPoint(FlxG.mouse.x - refPoint.x, FlxG.mouse.y - refPoint.y);
-				//secondCursor.x = (FlxG.mouse.x * -1) + refPoint.x + FlxG.height;
-				//secondCursor.y = (FlxG.mouse.y * -1) + refPoint.y + FlxG.width;
+			}
+			else if(FlxG.keys.Z)
+			{
+				secondCursor.x = (FlxG.mouse.x * -1) + refPoint.x * 2;
+				secondCursor.y = (FlxG.mouse.y * -1) + refPoint.y * 2;
+				thirdCursor.x = (FlxG.mouse.x * -1) + refPoint.x * 2;
+				thirdCursor.y = FlxG.mouse.y;
+
+				fourthCursor.y = (FlxG.mouse.y * -1) + refPoint.y * 2;
+				fourthCursor.x = FlxG.mouse.x;
 			}
 			else
 			{
