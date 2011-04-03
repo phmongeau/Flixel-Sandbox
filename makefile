@@ -1,7 +1,8 @@
-MXMLC = mxmlc
-FLIXEL = /Users/philippe/Documents/Flex/Library/flixel/
+MXMLC = fcsh-wrap
+FLIXEL = /Users/philippemongeau/Documents/Flex/Library/flixelDev
+SRC = *.as data/*.png
 MAIN = SandBox.as
 SWF = Game.swf
 
-$(SWF) : $(MAIN)
-	$(MXMLC) --source-path=$(FLIXEL) -o $(SWF) -- $(MAIN)
+$(SWF) : $(SRC)
+	$(MXMLC) $(MAIN)  -o $(SWF) -static-link-runtime-shared-libraries=true --source-path=$(FLIXEL)

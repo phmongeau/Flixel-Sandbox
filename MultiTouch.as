@@ -15,11 +15,15 @@ package
 		private var coins:FlxGroup;
 		
 		private var refPoint:FlxPoint = new FlxPoint(0,0);;
+
+
+        private var dSplit:Boolean = false;
+        private var fSplit:Boolean = false;
 		
 		override public function create():void
 		{
 			FlxG.mouse.show();
-			FlxG.mouse.cursor.loadGraphic(ImgCursor);
+			FlxG.mouse.load(ImgCursor);
 			
 			cursors = new FlxGroup();
 			add(cursors);
@@ -56,12 +60,17 @@ package
 		{
 			firstCursor.x = FlxG.mouse.x;
 			firstCursor.y = FlxG.mouse.y;
-			if(FlxG.keys.X)
+			if(dSplit)
 			{
 				secondCursor.x = (FlxG.mouse.x * -1) + refPoint.x * 2;
 				secondCursor.y = (FlxG.mouse.y * -1) + refPoint.y * 2;
+
+                thirdCursor.x = FlxG.mouse.x;
+                thirdCursor.y = FlxG.mouse.y;
+                fourthCursor.x = FlxG.mouse.x;
+                fourthCursor.y = FlxG.mouse.y;
 			}
-			else if(FlxG.keys.Z)
+			else if(fSplit)
 			{
 				secondCursor.x = (FlxG.mouse.x * -1) + refPoint.x * 2;
 				secondCursor.y = (FlxG.mouse.y * -1) + refPoint.y * 2;
@@ -75,6 +84,10 @@ package
 			{
 				secondCursor.x = FlxG.mouse.x;
 				secondCursor.y = FlxG.mouse.y;
+                thirdCursor.x = FlxG.mouse.x;
+                thirdCursor.y = FlxG.mouse.y;
+                fourthCursor.x = FlxG.mouse.x;
+                fourthCursor.y = FlxG.mouse.y;
 				refPoint.x = FlxG.mouse.x;
 				refPoint.y = FlxG.mouse.y;
 			}
@@ -84,8 +97,10 @@ package
 		
 		private function getCoins(cu:Object, co:FlxSprite):void
 		{
-			co.x = Math.random() * FlxG.width;
-			co.y = Math.random() * FlxG.height;
+			co.x = FlxG.random() * FlxG.width;
+			co.y = FlxG.random() * FlxG.height;
+            dSplit = !dSplit;
+            fSplit = !dSplit;
 		}
 	}
 }

@@ -1,6 +1,7 @@
 package
 {
 	import org.flixel.*;
+	import org.flixel.system.FlxPreloader;
 
 	public class Preloader extends FlxPreloader
 	{
@@ -8,6 +9,11 @@ package
 		{
 			className = "SandBox";
 			super();
+		}
+		
+		override protected function create():void
+		{
+			super.create();
 		}
 	}
 }
