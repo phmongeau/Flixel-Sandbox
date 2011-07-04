@@ -18,19 +18,19 @@ package
 			
 
             var b:FlxButton;
-			b = new FlxButton((FlxG.width - 80)/2, 100, goToMultiTouch, "MultiTouch");
+			b = new FlxButton((FlxG.width - 80)/2, 100, "MultiTouch", goToMultiTouch);
 			add(b);
 
-			b = new FlxButton((FlxG.width - 80)/2, 120, goToGridState, "Grid");
+			b = new FlxButton((FlxG.width - 80)/2, 120, "Grid", goToGridState);
 			add(b);
 
-			b = new FlxButton((FlxG.width - 80)/2, 140, goToBubbleState, "Bubble");
+			b = new FlxButton((FlxG.width - 80)/2, 140, "Bubble", goToBubbleState);
 			add(b);
 
-			b = new FlxButton((FlxG.width - 80)/2, 160, goToSocketState, "Socket");
+			b = new FlxButton((FlxG.width - 80)/2, 160, "Socket", goToSocketState);
 			add(b);
 
-			b = new FlxButton((FlxG.width - 80)/2, 180, goToStrategyState, "Strategy");
+			b = new FlxButton((FlxG.width - 80)/2, 180, "Strategy", goToStrategyState);
 			add(b);
 			
 

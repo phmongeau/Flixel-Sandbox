@@ -92,7 +92,7 @@ package
 				refPoint.y = FlxG.mouse.y;
 			}
 			
-			FlxU.overlap(cursors, coins, getCoins);
+			FlxG.overlap(cursors, coins, getCoins);
 		}
 		
 		private function getCoins(cu:Object, co:FlxSprite):void

@@ -13,8 +13,6 @@ package
             player.makeGraphic(1,1, 0xffffffff);
             add(player);
             add(trash);
-
-            //FlxG.showBounds = true;
         }
 
         override public function update():void
@@ -41,7 +39,7 @@ package
                 player.scale.x = (FlxG.mouse.x - player.x);
                 player.scale.y = (FlxG.mouse.y - player.y);
             }
-            FlxU.collide(trash, player);
+            FlxG.collide(trash, player);
             super.update();
         }
     }
